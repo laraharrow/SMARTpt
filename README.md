@@ -1,0 +1,1 @@
+# SMAELR PT email editor
