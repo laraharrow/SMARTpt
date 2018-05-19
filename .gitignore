@@ -1,2 +1,2 @@
-data.js
-ActivityLog.pdf
+.gitignore
+/src/templates/data.js
