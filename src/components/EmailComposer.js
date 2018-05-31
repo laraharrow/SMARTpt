@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import inArray from 'in-array';
-
-import Templates from '../templates/data';
+import firebase from '../firebase.js';
 
 class EmailComposer extends Component {
 	constructor(props) {
@@ -15,11 +13,18 @@ class EmailComposer extends Component {
 
 	createEmailBody() {
 		let emailBody = [];
-		for (let temp in Templates.content) {
-			if (this.props[temp]) {
-				emailBody.push(<p>{Templates.content[temp]}</p>);
+		let dbValue;
+
+		const passwardRef = firebase.database().ref('data');
+		passwardRef.on('value', (options) => {
+		dbValue = options.val();
+		}); 
+
+		for (let text in this.props) {
+			if (this.props[text] === true) {
+			  emailBody.push(<p>{dbValue[text]}</p>)
 			}
-		}
+		}	 
 		this.toSend = emailBody;
 		return emailBody;
 	}
@@ -35,7 +40,7 @@ class EmailComposer extends Component {
 
 		let email = this.props.email;
 		let subject = 'SMART PT Follow Up';
-		let attach = '/Users/laraismael/Documents/projects/SMARTpt/src/templates/ActivityLog.pdf';
+		let attach = '/Users/laraismael/Documents/projects/SMARTpt/src/templates/logo.png';
 		let emailBody = `Hello ${
 			this.props.patient
 		},%0D%0A Here is the follow up information from our recent appointment. It was great working with you! Let me know if you have any additional questions.%0D%0A

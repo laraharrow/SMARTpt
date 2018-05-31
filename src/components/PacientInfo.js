@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import EmailComposer from './EmailComposer';
 
 class PacientInfo extends Component {

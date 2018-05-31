@@ -16,7 +16,6 @@ class Checkboxs extends Component {
 
 	handleCheckbox(e) {
 		this.setState({ [e.target.name]: e.target.checked });
-		console.log('******', this.state);
 	}
 
 	render() {
