@@ -29,13 +29,13 @@ class PacientInfo extends Component {
     return (
       <div>
         <form class="form">
-          <h2>Pacient Info</h2> 
+          <h2>Patient Info</h2> 
           <label>
             <input 
             type="text" 
             value={this.state.patient} 
             name="patient" 
-            placeholder="enter pacient username"
+            placeholder="enter patient username"
             onChange={this.handleChange} />
           </label>
           <label>
@@ -43,7 +43,7 @@ class PacientInfo extends Component {
             type="text" 
             value={this.state.email} 
             name="email" 
-            placeholder="enter paciente email"
+            placeholder="enter patient email"
             onChange={this.handleChange} />
           </label>
 
