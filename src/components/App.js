@@ -6,7 +6,7 @@ import Login from './Login';
 import './App.scss';
 
 const options = {
-  position: 'top left',
+  position: 'top center',
   timeout: 5000,
   offset: '30px',
   transition: 'scale'
@@ -23,3 +23,5 @@ class App extends Component {
 }
 
 export default App;
+
+

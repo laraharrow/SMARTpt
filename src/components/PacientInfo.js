@@ -28,67 +28,142 @@ class PacientInfo extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form class="form">
+          <h2>Pacient Info</h2> 
           <label>
-            Patient:
-            <input type="text" value={this.state.patient} name="patient" onChange={this.handleChange} />
+            <input 
+            type="text" 
+            value={this.state.patient} 
+            name="patient" 
+            placeholder="enter pacient username"
+            onChange={this.handleChange} />
+          </label>
+          <label>
+            <input 
+            type="text" 
+            value={this.state.email} 
+            name="email" 
+            placeholder="enter paciente email"
+            onChange={this.handleChange} />
           </label>
 
-          <label>
-            Email:
-            <input type="text" value={this.state.email} name="email" onChange={this.handleChange} />
-          </label>
+          <br/>
+          <br/>
+          <h2>select the checkbox bellow to creare your email</h2>
+          
+          <div class="checkbox" >
+            
+            <div class="pretty p-default p-curve p-fill"> 
+              <input 
+                name="SetsReps" 
+                type="checkbox" 
+                checked={this.state.SetsReps} 
+                onChange={this.handleChange}
+              />
+              <div class="state">
+                <label>Sets/Reps</label>
+              </div>  
+            </div> 
+            <br/>
+            <br/>
 
-          <label>
-            Sets/Reps
-            <input name="SetsReps" type="checkbox" checked={this.state.SetsReps} onChange={this.handleChange} />
-          </label>
+            <div class="pretty p-default p-curve p-fill"> 
+              <input 
+                name="MotorControl" 
+                type="checkbox" 
+                checked={this.state.MotorControl} 
+                onChange={this.handleChange} 
+              />
+              <div class="state">  
+                <label>
+                  Motor Control
+                </label>
+              </div>  
+            </div> 
+            <br/>
+            <br/>
 
-          <label>
-            Motor Control
-            <input name="MotorControl" type="checkbox" checked={this.state.MotorControl} onChange={this.handleChange} />
-          </label>
+            <div class="pretty p-default p-curve p-fill">
+              <input 
+                name="IceVsHeat" 
+                type="checkbox" 
+                checked={this.state.IceVsHeat} 
+                onChange={this.handleChange} 
+              />
+              <div class="state">  
+                <label>
+                  Ice Vs. Heat
+                </label>
+              </div>  
+            </div> 
+            <br/>
+            <br/>
+   
+            <div class="pretty p-default p-curve p-fill">
+              <input 
+                name="SymptomLog" 
+                type="checkbox" 
+                checked={this.state.SymptomLog} 
+                onChange={this.handleChange} 
+              />
+              <div class="state">    
+                <label>
+                  Symptom Log
+                </label>
+              </div>  
+            </div>
+            <br/>
+            <br/>
 
-          <label>
-            Ice Vs. Heat
-            <input name="IceVsHeat" type="checkbox" checked={this.state.IceVsHeat} onChange={this.handleChange} />
-          </label>
+            <div class="pretty p-default p-curve p-fill">
+              <input
+                name="ActivityModification"
+                type="checkbox"
+                checked={this.state.ActivityModification}
+                onChange={this.handleChange}
+              />
+              <div class="state">
+                <label>
+                  Activity Modification
+                </label>
+              </div>
+            </div> 
+            <br/>
+            <br/>
+            
+            <div class="pretty p-default p-curve p-fill"> 
+              <input
+                name="NextStepsEVAL"
+                type="checkbox"
+                checked={this.state.NextStepsEVAL}
+                onChange={this.handleChange}
+              />
+              <div class="state">
+                <label>
+                  NextSteps - EVAL
+                </label>
+              </div>
+            </div> 
+            <br/> 
+            <br/>
+  
 
-          <label>
-            Symptom Log
-            <input name="SymptomLog" type="checkbox" checked={this.state.SymptomLog} onChange={this.handleChange} />
-          </label>
+            <div class="pretty p-default p-curve p-fill"> 
+              <input
+                name="NextStepsFollowUp"
+                type="checkbox"
+                checked={this.state.NextStepsFollowUp}
+                onChange={this.handleChange}
+              />
+              <div class="state">
+                <label>
+                  NextSteps - Follow Up
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>   
 
-          <label>
-            Activity Modification
-            <input
-              name="ActivityModification"
-              type="checkbox"
-              checked={this.state.ActivityModification}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <label>
-            NextSteps - EVAL
-            <input
-              name="NextStepsEVAL"
-              type="checkbox"
-              checked={this.state.NextStepsEVAL}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <label>
-            NextSteps - Follow Up
-            <input
-              name="NextStepsFollowUp"
-              type="checkbox"
-              checked={this.state.NextStepsFollowUp}
-              onChange={this.handleChange}
-            />
-          </label>
-        </form>
         <div>
           <EmailComposer
             SetsReps={this.state.SetsReps}

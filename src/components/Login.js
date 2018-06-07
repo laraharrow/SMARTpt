@@ -23,7 +23,6 @@ class Login extends Component {
     })
   }
 
-  // {senha: "cavalo10", user: "jaimie"}
   handleSubmit(e){
     e.preventDefault();
     
@@ -48,12 +47,18 @@ class Login extends Component {
  
     const form = (  
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="name" placeholder="name" onChange={this.handleChange} value={this.state.name} required/>
-          <input type="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.passward} required/>
-          <button>Login</button>
-        </form>
-        <img id='logo' src={logo} />
+        <div class="form">
+          <h2>LOGIN</h2>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" name="name" placeholder="enter user username" onChange={this.handleChange} value={this.state.name} required/>
+            <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.passward} required/>
+            <input type="submit" value="submit"/>
+          </form>
+        </div>
+        <br/>
+        <hr/>
+        <br/>  
+        <img id='logo' src={logo}/>
       </div>
     );
     return ( this.state.showData === true ? logedIn : form ) 

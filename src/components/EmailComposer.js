@@ -26,7 +26,6 @@ class EmailComposer extends Component {
 			}
 		}	 
 		this.toSend = emailBody;
-		return emailBody;
 	}
 
 	sendEmail(e) {
@@ -52,17 +51,8 @@ class EmailComposer extends Component {
 	render() {
 		return (
 			<div>
-				<div>
-					<p>
-						Hello , Here is the follow up information from our recent appointment. It was great working with you! Let me
-						know if you have any additional questions.
-						{this.createEmailBody()}
-					</p>
-				</div>
-
-				<div>
-					<button onClick={this.sendEmail}>Create Email</button>
-				</div>
+				{this.createEmailBody()}
+				<button class="send" onClick={this.sendEmail}>Create Email</button>
 			</div>
 		);
 	}
