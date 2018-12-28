@@ -1,3 +1,4 @@
 # SMART PT email editor
 
-URL: https://smartpt-jaimieharrow.firebaseapp.com/
+to run the code locally
+### npm start
