@@ -12,31 +12,32 @@ class Login extends Component {
       password: '',
       showData: false
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
 
-  }
+  };
 
-  handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-  handleSubmit(e){
+  handleSubmit = e => {
     e.preventDefault();
-    
+
     const passwardRef = firebase.database().ref('login');
     passwardRef.on('value', (login) => {
       const dbValue = login.val();
       if (dbValue.senha === this.state.password && dbValue.user === this.state.name) {
         this.setState({ showData: true })
       } else {
-        this.setState({ showData: false })
+        this.setState({
+          name: '',
+          password: ''
+        });
         this.props.alert.error("incorrect password");
       }
     })
-  }
+  };
 
   render() {
     const logedIn = (
@@ -44,26 +45,25 @@ class Login extends Component {
         <PacientInfo/>
       </div>
     )
- 
-    const form = (  
+
+    const form = (
       <div>
         <div class="form">
           <h2>LOGIN</h2>
           <form onSubmit={this.handleSubmit}>
-            <input type="text" name="name" placeholder="enter user username" onChange={this.handleChange} value={this.state.name} required/>
-            <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.passward} required/>
+            <input type="text" name="name" placeholder="Enter user username" onChange={this.handleChange} value={this.state.name} required/>
+            <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} value={this.state.password} required/>
             <input type="submit" value="submit"/>
           </form>
         </div>
         <br/>
         <hr/>
-        <br/>  
+        <br/>
         <img id='logo' src={logo}/>
       </div>
     );
-    return ( this.state.showData === true ? logedIn : form ) 
+    return ( this.state.showData === true ? logedIn : form )
   }
 }
 
 export default withAlert(Login);
-
