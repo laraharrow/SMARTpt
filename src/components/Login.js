@@ -12,12 +12,10 @@ class Login extends Component {
       password: '',
       showData: false
     }
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-
   };
 
   handleChange = e => {
+    console.log(e.target.name)
     this.setState({ [e.target.name]: e.target.value });
   };
 
