@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+http://github.com/laraismael1/SMARTpt.git"
+    "url": " git@github.com:laraismael1/SMARTpt.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "http://github.com/laraismael1/SMARTpt/issues"
+    "url": " git@github.com:laraismael1/SMARTpt/issues"
   },
-  "homepage": "http://github.com/laraismael1/SMARTpt#readme",
+  "homepage": " git@github.com:laraismael1/SMARTpt#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
