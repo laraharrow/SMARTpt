@@ -18,13 +18,13 @@ class EmailComposer extends Component {
 		const passwardRef = firebase.database().ref('data');
 		passwardRef.on('value', (options) => {
 		dbValue = options.val();
-		}); 
+		});
 
 		for (let text in this.props) {
 			if (this.props[text] === true) {
 			  emailBody.push(<p>{dbValue[text]}</p>)
 			}
-		}	 
+		}
 		this.toSend = emailBody;
 	}
 
@@ -46,6 +46,7 @@ class EmailComposer extends Component {
  ${templatesList}%0D%0A%0D%0A`;
 
 		document.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody + '&attach=' + attach;
+		this.props.handleResetCheckbox();
 	}
 
 	render() {

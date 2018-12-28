@@ -12,14 +12,15 @@ class Login extends Component {
       password: '',
       showData: false
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   };
 
-  handleChange = e => {
-    console.log(e.target.name)
+  handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault();
 
     const passwardRef = firebase.database().ref('login');
